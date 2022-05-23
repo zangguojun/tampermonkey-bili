@@ -40,8 +40,13 @@ const commonMeta = {
   icon: "https://avatars.githubusercontent.com/u/49148972?s=400&u=b2781dee2ef51edc64d769c125da0ed060203815&v=4",
 }
 
-const getBanner = (meta) => `// ==UserScript==\n${Object.entries(
-  Object.assign(meta, commonMeta)
+const getBanner = (isProduction) => `// ==UserScript==\n${Object.entries(
+  Object.assign(
+    {
+      name: isProduction ? "bili助手" : "bili助手-dev",
+    },
+    commonMeta
+  )
 )
   .map(([key, value]) => {
     if (Array.isArray(value)) {

@@ -111,9 +111,7 @@ module.exports = (env) => {
     devtool: env.production ? false : "source-map",
     plugins: [
       new webpack.BannerPlugin({
-        banner: getBanner({
-          name: env.production ? "bili助手" : "bili助手-dev",
-        }),
+        banner: getBanner(env.production),
         raw: true,
         entryOnly: true,
       }),
@@ -122,9 +120,7 @@ module.exports = (env) => {
         : [
             new HtmlWebpackPlugin(),
             new TampermonkeyWritePlugin({
-              banner: getBanner({
-                name: env.production ? "bili助手" : "bili助手-dev",
-              }),
+              banner: getBanner(env.production),
             }),
           ]),
     ],
