@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { XhrResponseType } from "@/commonType"
 
 declare global {
