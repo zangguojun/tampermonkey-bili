@@ -1,34 +1,6 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { XhrResponseType } from "@/commonType"
 
 declare global {
-  interface CompilationInfo {
-    commitHash: string
-    branch: string
-    version: string
-    nearestTag: string
-    versionWithTag: string
-    // buildTime: number
-  }
-  const webpackCompilationInfo: CompilationInfo
-
-  // const BwpElement: {
-  //   new (): HTMLVideoElement;
-  //   prototype: HTMLVideoElement;
-  // };
-  interface Window {
-    aid: string | undefined
-    cid: string | undefined
-    pageno: string | number | undefined
-    // bilibiliEvolved: ExternalApis
-  }
-  const unsafeWindow: Window & typeof globalThis
-  // const coreApis: CoreApis
-  // const dq: CoreApis['utils']['dq']
-  // const dqa: CoreApis['utils']['dqa']
-  // const none: CoreApis['utils']['none']
-  // const componentsTags: CoreApis['componentApis']['component']['componentsTags']
-
   interface MonkeyXhrResponse {
     finalUrl: string
     readyState: number

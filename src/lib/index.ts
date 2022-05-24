@@ -1,17 +1,2 @@
-export { getData, postData, postDataCdata } from './ajax';
-export { downloadImgs, noDisplayPic } from './downloadPicture';
-export { setFastReply } from './fastReply';
-export { launch } from './launch';
-export { swPay, swRePic, swThk, update } from './menuCommand';
-export { MessageBox } from './message';
-export { playVideo } from './noSleep';
-export { autofillCaptcha } from './orc';
-export { loadOriginImage } from './originImage';
-export { autoPay } from './pay';
-export { addPlayEvent, autoPlay } from './play';
-export { addOnePage, addPageBatch, replyOrThk } from './replyAndThank';
-export { resetReplyData } from './resetReplyData';
-export { sign, timeControl } from './sign';
-export { autoThk } from './thank';
-export { creatUser, getUserFromName, getUserName, User } from './user';
-export { autoVoted } from './vote';
+export { getData, postData, postDataCdata } from "./ajax"
+export { MessageBox } from "./message"

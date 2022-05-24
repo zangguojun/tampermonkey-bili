@@ -18,6 +18,7 @@
 # Ignore all local history of files
 .history
 .ionide
+.idea
 
 ### Vuejs ###
 # Recommended template: Node.gitignore
