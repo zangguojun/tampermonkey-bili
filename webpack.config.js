@@ -1,15 +1,14 @@
 const path = require("path")
 const webpack = require("webpack")
 const TerserPlugin = require("terser-webpack-plugin")
-const HtmlWebpackPlugin = require("html-webpack-plugin")
 const { getBanner } = require("./src/meta")
-const { TampermonkeyWritePlugin } = require("./plugins")
+// const { TampermonkeyWritePlugin } = require("./plugins")
 
 module.exports = (env) => {
   console.log(env)
   return {
     mode: env.production ? "production" : "development",
-    entry: [path.resolve(__dirname, "src", "index.tsx")],
+    entry: path.resolve(__dirname, "src", "index.tsx"),
     output: {
       path: path.resolve(__dirname, "dist"),
       filename: env.production ? "prod.js" : "dev.js",
@@ -49,19 +48,6 @@ module.exports = (env) => {
           use: ["style-loader", "css-loader"],
           include: /node_modules/,
         },
-        // {
-        //   test: /\.css$/,
-        //   use: [
-        //     "to-string-loader",
-        //     {
-        //       loader: "css-loader",
-        //       options: {
-        //         esModule: false,
-        //       },
-        //     },
-        //   ],
-        //   include: [path.resolve(__dirname, "src")],
-        // },
         {
           test: /\.less$/,
           use: [
@@ -91,8 +77,8 @@ module.exports = (env) => {
             },
             compress: {
               warnings: true,
-              drop_debugger: true, // 删除debugger
-              drop_console: true, // 删除console
+              drop_debugger: true,
+              drop_console: true,
             },
           },
           extractComments: false,
@@ -108,7 +94,7 @@ module.exports = (env) => {
         "@": path.resolve(__dirname, "src"),
       },
     },
-    devtool: env.production ? false : "source-map",
+    // devtool: env.production ? false : "source-map",
     plugins: [
       new webpack.BannerPlugin({
         banner: getBanner(env.production),
@@ -118,10 +104,9 @@ module.exports = (env) => {
       ...(env.production
         ? []
         : [
-            new HtmlWebpackPlugin(),
-            new TampermonkeyWritePlugin({
-              banner: getBanner(env.production),
-            }),
+            // new TampermonkeyWritePlugin({
+            //   banner: getBanner(env.production),
+            // }),
           ]),
     ],
     devServer: {
